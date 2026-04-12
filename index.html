@@ -1,418 +1,387 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="ja">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2575.7">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; color: #4689cc; -webkit-text-stroke: #4689cc}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; color: #8cd3fe; -webkit-text-stroke: #8cd3fe}
-    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; color: #c27e65; -webkit-text-stroke: #c27e65}
-    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; color: #cacaca; -webkit-text-stroke: #cacaca}
-    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; color: #6d7378; -webkit-text-stroke: #6d7378}
-    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; color: #cacaca; -webkit-text-stroke: #cacaca; min-height: 16.0px}
-    p.p7 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; color: #71c083; -webkit-text-stroke: #71c083}
-    p.p8 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; color: #a7c598; -webkit-text-stroke: #a7c598}
-    span.s1 {font-kerning: none; background-color: #171818}
-    span.s2 {font-kerning: none; color: #8cd3fe; background-color: #171818; -webkit-text-stroke: 0px #8cd3fe}
-    span.s3 {font-kerning: none; color: #6d6d6d; background-color: #171818; -webkit-text-stroke: 0px #6d6d6d}
-    span.s4 {font-kerning: none; color: #cacaca; background-color: #171818; -webkit-text-stroke: 0px #cacaca}
-    span.s5 {font-kerning: none; color: #c27e65; background-color: #171818; -webkit-text-stroke: 0px #c27e65}
-    span.s6 {font-kerning: none; color: #4689cc; background-color: #171818; -webkit-text-stroke: 0px #4689cc}
-    span.s7 {font-kerning: none; color: #d4d4d4; background-color: #171818; -webkit-text-stroke: 0px #d4d4d4}
-    span.s8 {font-kerning: none}
-    span.s9 {font-kerning: none; color: #a7c598; background-color: #171818; -webkit-text-stroke: 0px #a7c598}
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grounded Soar | 訪問型プライベート・ピラティス＆ヨガ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500&family=Noto+Serif+JP:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg-color: #FAFAF7; /* 温かみのあるオフホワイト */
+    --text-main: #4A4643; /* 真っ黒ではない、優しいチャコールグレー */
+    --text-accent: #8C7A6B; /* 上品なモカブラウン */
+    --bg-accent: #F0EBE6; /* ボックス用の薄いグレージュ */
+    --btn-color: #B59C8F; /* 落ち着いたダスティピンク／ベージュ */
+    --btn-hover: #A0887D;
+  }
+
+  body {
+    font-family: 'Noto Sans JP', sans-serif;
+    color: var(--text-main);
+    background-color: var(--bg-color);
+    line-height: 1.8;
+    margin: 0;
+    padding: 0;
+    letter-spacing: 0.05em;
+  }
+
+  h1, h2, h3 {
+    font-family: 'Noto Serif JP', serif;
+    font-weight: 500;
+  }
+
+  /* 中央に寄せて読みやすくするコンテナ */
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+  }
+
+  /* ファーストビュー（ヒーローセクション） */
+  .hero {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #fff;
+    border: 1px solid var(--bg-accent);
+    border-radius: 8px;
+    margin-bottom: 60px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+  }
+
+  .hero-catch {
+    color: var(--text-accent);
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 15px;
+  }
+
+  .hero h1 {
+    font-size: 1.8rem;
+    line-height: 1.5;
+    margin-bottom: 30px;
+    color: var(--text-main);
+  }
+
+  .hero-text {
+    font-size: 1rem;
+    color: #666;
+  }
+
+  /* セクション共通 */
+  section {
+    margin-bottom: 80px;
+  }
+
+  h2 {
+    font-size: 1.6rem;
+    text-align: center;
+    border-bottom: 1px solid var(--text-accent);
+    padding-bottom: 15px;
+    margin-bottom: 40px;
+    color: var(--text-accent);
+  }
+
+  h3 {
+    font-size: 1.3rem;
+    margin-top: 40px;
+    color: var(--text-main);
+  }
+
+  p {
+    margin-bottom: 1.5em;
+  }
+
+  ul {
+    background: #fff;
+    padding: 30px 30px 30px 50px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+    margin-bottom: 30px;
+  }
+
+  li {
+    margin-bottom: 10px;
+  }
+
+  /* お客様の声（引用ブロック） */
+  blockquote {
+    background-color: var(--bg-accent);
+    padding: 30px;
+    margin: 0 0 30px 0;
+    border-left: 4px solid var(--text-accent);
+    font-style: italic;
+    border-radius: 0 8px 8px 0;
+  }
+
+  blockquote p {
+    margin-bottom: 15px;
+    font-size: 0.95rem;
+  }
+  blockquote p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* 料金ボックス */
+  .price-box {
+    background: #fff;
+    border: 2px solid var(--bg-accent);
+    padding: 40px;
+    border-radius: 8px;
+    margin-top: 30px;
+  }
+
+  .campaign-box {
+    background: #FAF5F0;
+    border: 2px solid var(--btn-color);
+    padding: 40px;
+    border-radius: 8px;
+    margin-top: 30px;
+    text-align: center;
+  }
+
+  .campaign-box h3 {
+    color: var(--btn-color);
+    margin-top: 0;
+  }
+
+  /* FAQ */
+  .faq-item {
+    margin-bottom: 30px;
+  }
+  .faq-q {
+    font-weight: 600;
+    color: var(--text-accent);
+    margin-bottom: 5px;
+    font-family: 'Noto Serif JP', serif;
+  }
+  .faq-a {
+    padding-left: 1.5em;
+  }
+
+  /* ロゴ */
+  .logo-container {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .logo-img {
+    max-width: 250px;
+    height: auto;
+  }
+
+  /* ボタン */
+  .cta-area {
+    text-align: center;
+    margin-top: 60px;
+    padding: 50px 20px;
+    background-color: #fff;
+    border-radius: 8px;
+  }
+
+  .btn {
+    display: inline-block;
+    background-color: var(--btn-color);
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 500;
+    padding: 20px 40px;
+    border-radius: 50px;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 10px rgba(181, 156, 143, 0.4);
+    margin: 20px 0;
+  }
+
+  .btn:hover {
+    background-color: var(--btn-hover);
+  }
+
+  /* 画像プレースホルダー用のスタイル */
+  .image-placeholder {
+    background-color: #e0e0e0;
+    color: #666;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 8px;
+    margin: 30px 0;
+    padding: 20px;
+    font-weight: 500;
+    border: 2px dashed #bbb;
+  }
+
+  .img-hero { width: 100%; height: auto; border-radius: 8px; margin-top: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+  .img-profile { width: 250px; height: 250px; object-fit: cover; margin: 0 auto 30px; border-radius: 50%; display: block; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+  .img-content { width: 100%; height: auto; border-radius: 8px; margin: 30px 0; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+  .img-placeholder-5 { height: 300px; }
+
+  /* スマホ対応 */
+  @media (max-width: 600px) {
+    .hero h1 { font-size: 1.4rem; }
+    h2 { font-size: 1.3rem; }
+    .btn { font-size: 1rem; padding: 15px 20px; }
+  }
+</style>
 </head>
 <body>
-<p class="p1"><span class="s1">&lt;!DOCTYPE</span><span class="s2"> html</span><span class="s1">&gt;</span></p>
-<p class="p1"><span class="s3">&lt;</span><span class="s1">html</span><span class="s4"> </span><span class="s2">lang</span><span class="s3">=</span><span class="s5">"ja"</span><span class="s3">&gt;</span></p>
-<p class="p1"><span class="s3">&lt;</span><span class="s1">head</span><span class="s3">&gt;</span></p>
-<p class="p2"><span class="s3">&lt;</span><span class="s6">meta</span><span class="s4"> </span><span class="s1">charset</span><span class="s3">=</span><span class="s5">"UTF-8"</span><span class="s3">&gt;</span></p>
-<p class="p3"><span class="s3">&lt;</span><span class="s6">meta</span><span class="s4"> </span><span class="s2">name</span><span class="s3">=</span><span class="s1">"viewport"</span><span class="s4"> </span><span class="s2">content</span><span class="s3">=</span><span class="s1">"width=device-width, initial-scale=1.0"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s3">&lt;</span><span class="s6">title</span><span class="s3">&gt;</span><span class="s1">Grounded Soar | 訪問型プライベート・ピラティス＆ヨガ</span><span class="s3">&lt;/</span><span class="s6">title</span><span class="s3">&gt;</span></p>
-<p class="p3"><span class="s3">&lt;</span><span class="s6">link</span><span class="s4"> </span><span class="s2">rel</span><span class="s3">=</span><span class="s1">"preconnect"</span><span class="s4"> </span><span class="s2">href</span><span class="s3">=</span><span class="s1">"https://fonts.googleapis.com"</span><span class="s3">&gt;</span></p>
-<p class="p3"><span class="s3">&lt;</span><span class="s6">link</span><span class="s4"> </span><span class="s2">rel</span><span class="s3">=</span><span class="s1">"preconnect"</span><span class="s4"> </span><span class="s2">href</span><span class="s3">=</span><span class="s1">"https://fonts.gstatic.com"</span><span class="s4"> </span><span class="s2">crossorigin</span><span class="s3">&gt;</span></p>
-<p class="p3"><span class="s3">&lt;</span><span class="s6">link</span><span class="s4"> </span><span class="s2">href</span><span class="s3">=</span><span class="s1">"https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500&amp;family=Noto+Serif+JP:wght@400;500;600&amp;display=swap"</span><span class="s4"> </span><span class="s2">rel</span><span class="s3">=</span><span class="s1">"stylesheet"</span><span class="s3">&gt;</span></p>
-<p class="p1"><span class="s3">&lt;</span><span class="s1">style</span><span class="s3">&gt;</span></p>
-<p class="p1"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s1">:root</span><span class="s4"> </span><span class="s7">{</span></p>
-<p class="p5"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s2">--bg-color:</span><span class="s4"> #FAFAF7</span><span class="s7">;</span><span class="s4"> </span><span class="s1">/* 温かみのあるオフホワイト */</span></p>
-<p class="p5"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s2">--text-main:</span><span class="s4"> #4A4643</span><span class="s7">;</span><span class="s4"> </span><span class="s1">/* 真っ黒ではない、優しいチャコールグレー */</span></p>
-<p class="p5"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s2">--text-accent:</span><span class="s4"> #8C7A6B</span><span class="s7">;</span><span class="s4"> </span><span class="s1">/* 上品なモカブラウン */</span></p>
-<p class="p5"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s2">--bg-accent:</span><span class="s4"> #F0EBE6</span><span class="s7">;</span><span class="s4"> </span><span class="s1">/* ボックス用の薄いグレージュ */</span></p>
-<p class="p5"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s2">--btn-color:</span><span class="s4"> #B59C8F</span><span class="s7">;</span><span class="s4"> </span><span class="s1">/* 落ち着いたダスティピンク／ベージュ */</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s2">--btn-hover:</span><span class="s1"> #A0887D</span><span class="s7">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">  </span></span><span class="s7">}</span></p>
-<p class="p6"><span class="s8"></span><br></p>
-<p class="p1"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s1">body</span><span class="s4"> </span><span class="s7">{</span></p>
-<p class="p7"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s2">font-family:</span><span class="s4"> </span><span class="s1">'Noto Sans JP'</span><span class="s7">,</span><span class="s4"> </span><span class="s5">sans-serif</span><span class="s7">;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s2">color:</span><span class="s4"> </span><span class="s1">var(--text-main)</span><span class="s7">;</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">background-color:</span><span class="s4"> </span><span class="s5">var(--bg-color)</span><span class="s7">;</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">line-height:</span><span class="s4"> </span><span class="s9">1.8</span><span class="s7">;</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">margin:</span><span class="s4"> </span><span class="s9">0</span><span class="s7">;</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">padding:</span><span class="s4"> </span><span class="s9">0</span><span class="s7">;</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">letter-spacing:</span><span class="s4"> </span><span class="s9">0.05em</span><span class="s7">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">  </span></span><span class="s7">}</span></p>
-<p class="p6"><span class="s8"></span><br></p>
-<p class="p1"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s1">h1</span><span class="s7">,</span><span class="s4"> </span><span class="s1">h2</span><span class="s7">,</span><span class="s4"> </span><span class="s1">h3</span><span class="s4"> </span><span class="s7">{</span></p>
-<p class="p7"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s2">font-family:</span><span class="s4"> </span><span class="s1">'Noto Serif JP'</span><span class="s7">,</span><span class="s4"> </span><span class="s5">serif</span><span class="s7">;</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">font-weight:</span><span class="s4"> </span><span class="s9">500</span><span class="s7">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">  </span></span><span class="s7">}</span></p>
-<p class="p6"><span class="s8"></span><br></p>
-<p class="p5"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s1">/* 中央に寄せて読みやすくするコンテナ */</span></p>
-<p class="p1"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s1">.container</span><span class="s4"> </span><span class="s7">{</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">max-width:</span><span class="s4"> </span><span class="s9">800px</span><span class="s7">;</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">margin:</span><span class="s4"> </span><span class="s9">0</span><span class="s4"> </span><span class="s5">auto</span><span class="s7">;</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">padding:</span><span class="s4"> </span><span class="s9">40px</span><span class="s4"> </span><span class="s9">20px</span><span class="s7">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">  </span></span><span class="s7">}</span></p>
-<p class="p6"><span class="s8"></span><br></p>
-<p class="p5"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s1">/* ファーストビュー（ヒーローセクション） */</span></p>
-<p class="p1"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s1">.hero</span><span class="s4"> </span><span class="s7">{</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">text-align:</span><span class="s4"> </span><span class="s5">center</span><span class="s7">;</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">padding:</span><span class="s4"> </span><span class="s9">60px</span><span class="s4"> </span><span class="s9">20px</span><span class="s7">;</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">background-color:</span><span class="s4"> #fff</span><span class="s7">;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s2">border:</span><span class="s4"> </span><span class="s9">1px</span><span class="s4"> </span><span class="s1">solid</span><span class="s4"> </span><span class="s1">var(--bg-accent)</span><span class="s7">;</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">border-radius:</span><span class="s4"> </span><span class="s9">8px</span><span class="s7">;</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">margin-bottom:</span><span class="s4"> </span><span class="s9">60px</span><span class="s7">;</span></p>
-<p class="p8"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s2">box-shadow:</span><span class="s4"> </span><span class="s1">0</span><span class="s4"> </span><span class="s1">4px</span><span class="s4"> </span><span class="s1">15px</span><span class="s4"> </span><span class="s5">rgba(</span><span class="s1">0</span><span class="s7">,</span><span class="s1">0</span><span class="s7">,</span><span class="s1">0</span><span class="s7">,</span><span class="s1">0.02</span><span class="s5">)</span><span class="s7">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">  </span></span><span class="s7">}</span></p>
-<p class="p6"><span class="s8"></span><br></p>
-<p class="p1"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s1">.hero-catch</span><span class="s4"> </span><span class="s7">{</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s2">color:</span><span class="s4"> </span><span class="s1">var(--text-accent)</span><span class="s7">;</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">font-size:</span><span class="s4"> </span><span class="s9">1.1rem</span><span class="s7">;</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">font-weight:</span><span class="s4"> </span><span class="s9">500</span><span class="s7">;</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">margin-bottom:</span><span class="s4"> </span><span class="s9">15px</span><span class="s7">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">  </span></span><span class="s7">}</span></p>
-<p class="p6"><span class="s8"></span><br></p>
-<p class="p1"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s1">.hero</span><span class="s4"> </span><span class="s1">h1</span><span class="s4"> </span><span class="s7">{</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">font-size:</span><span class="s4"> </span><span class="s9">1.8rem</span><span class="s7">;</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">line-height:</span><span class="s4"> </span><span class="s9">1.5</span><span class="s7">;</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">margin-bottom:</span><span class="s4"> </span><span class="s9">30px</span><span class="s7">;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s2">color:</span><span class="s4"> </span><span class="s1">var(--text-main)</span><span class="s7">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">  </span></span><span class="s7">}</span></p>
-<p class="p6"><span class="s8"></span><br></p>
-<p class="p1"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s1">.hero-text</span><span class="s4"> </span><span class="s7">{</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">font-size:</span><span class="s4"> </span><span class="s9">1rem</span><span class="s7">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s2">color:</span><span class="s1"> #666</span><span class="s7">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">  </span></span><span class="s7">}</span></p>
-<p class="p6"><span class="s8"></span><br></p>
-<p class="p5"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s1">/* セクション共通 */</span></p>
-<p class="p1"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s1">section</span><span class="s4"> </span><span class="s7">{</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">margin-bottom:</span><span class="s4"> </span><span class="s9">80px</span><span class="s7">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">  </span></span><span class="s7">}</span></p>
-<p class="p6"><span class="s8"></span><br></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">  </span></span><span class="s6">h2</span><span class="s1"> </span><span class="s7">{</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">font-size:</span><span class="s4"> </span><span class="s9">1.6rem</span><span class="s7">;</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">text-align:</span><span class="s4"> </span><span class="s5">center</span><span class="s7">;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s2">border-bottom:</span><span class="s4"> </span><span class="s9">1px</span><span class="s4"> </span><span class="s1">solid</span><span class="s4"> </span><span class="s1">var(--text-accent)</span><span class="s7">;</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">padding-bottom:</span><span class="s4"> </span><span class="s9">15px</span><span class="s7">;</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">margin-bottom:</span><span class="s4"> </span><span class="s9">40px</span><span class="s7">;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s2">color:</span><span class="s4"> </span><span class="s1">var(--text-accent)</span><span class="s7">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">  </span></span><span class="s7">}</span></p>
-<p class="p6"><span class="s8"></span><br></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">  </span></span><span class="s6">h3</span><span class="s1"> </span><span class="s7">{</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">font-size:</span><span class="s4"> </span><span class="s9">1.3rem</span><span class="s7">;</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">margin-top:</span><span class="s4"> </span><span class="s9">40px</span><span class="s7">;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s2">color:</span><span class="s4"> </span><span class="s1">var(--text-main)</span><span class="s7">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">  </span></span><span class="s7">}</span></p>
-<p class="p6"><span class="s8"></span><br></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">  </span></span><span class="s6">p</span><span class="s1"> </span><span class="s7">{</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">margin-bottom:</span><span class="s4"> </span><span class="s9">1.5em</span><span class="s7">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">  </span></span><span class="s7">}</span></p>
-<p class="p6"><span class="s8"></span><br></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">  </span></span><span class="s6">ul</span><span class="s1"> </span><span class="s7">{</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">background:</span><span class="s4"> #fff</span><span class="s7">;</span></p>
-<p class="p8"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s2">padding:</span><span class="s4"> </span><span class="s1">30px</span><span class="s4"> </span><span class="s1">30px</span><span class="s4"> </span><span class="s1">30px</span><span class="s4"> </span><span class="s1">50px</span><span class="s7">;</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">border-radius:</span><span class="s4"> </span><span class="s9">8px</span><span class="s7">;</span></p>
-<p class="p8"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s2">box-shadow:</span><span class="s4"> </span><span class="s1">0</span><span class="s4"> </span><span class="s1">2px</span><span class="s4"> </span><span class="s1">10px</span><span class="s4"> </span><span class="s5">rgba(</span><span class="s1">0</span><span class="s7">,</span><span class="s1">0</span><span class="s7">,</span><span class="s1">0</span><span class="s7">,</span><span class="s1">0.02</span><span class="s5">)</span><span class="s7">;</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">margin-bottom:</span><span class="s4"> </span><span class="s9">30px</span><span class="s7">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">  </span></span><span class="s7">}</span></p>
-<p class="p6"><span class="s8"></span><br></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">  </span></span><span class="s6">li</span><span class="s1"> </span><span class="s7">{</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">margin-bottom:</span><span class="s4"> </span><span class="s9">10px</span><span class="s7">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">  </span></span><span class="s7">}</span></p>
-<p class="p6"><span class="s8"></span><br></p>
-<p class="p5"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s1">/* お客様の声（引用ブロック） */</span></p>
-<p class="p1"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s1">blockquote</span><span class="s4"> </span><span class="s7">{</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">background-color:</span><span class="s4"> </span><span class="s5">var(--bg-accent)</span><span class="s7">;</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">padding:</span><span class="s4"> </span><span class="s9">30px</span><span class="s7">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s2">margin:</span><span class="s1"> </span><span class="s9">0</span><span class="s1"> </span><span class="s9">0</span><span class="s1"> </span><span class="s9">30px</span><span class="s1"> </span><span class="s9">0</span><span class="s7">;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s2">border-left:</span><span class="s4"> </span><span class="s9">4px</span><span class="s4"> </span><span class="s1">solid</span><span class="s4"> </span><span class="s1">var(--text-accent)</span><span class="s7">;</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">font-style:</span><span class="s4"> </span><span class="s5">italic</span><span class="s7">;</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">border-radius:</span><span class="s4"> </span><span class="s9">0</span><span class="s4"> </span><span class="s9">8px</span><span class="s4"> </span><span class="s9">8px</span><span class="s4"> </span><span class="s9">0</span><span class="s7">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">  </span></span><span class="s7">}</span></p>
-<p class="p6"><span class="s8"></span><br></p>
-<p class="p1"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s1">blockquote</span><span class="s4"> </span><span class="s1">p</span><span class="s4"> </span><span class="s7">{</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">margin-bottom:</span><span class="s4"> </span><span class="s9">15px</span><span class="s7">;</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">font-size:</span><span class="s4"> </span><span class="s9">0.95rem</span><span class="s7">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">  </span></span><span class="s7">}</span></p>
-<p class="p1"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s1">blockquote</span><span class="s4"> </span><span class="s1">p:last-child</span><span class="s4"> </span><span class="s7">{</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">margin-bottom:</span><span class="s4"> </span><span class="s9">0</span><span class="s7">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">  </span></span><span class="s7">}</span></p>
-<p class="p6"><span class="s8"></span><br></p>
-<p class="p5"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s1">/* 料金ボックス */</span></p>
-<p class="p1"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s1">.price-box</span><span class="s4"> </span><span class="s7">{</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">background:</span><span class="s4"> #fff</span><span class="s7">;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s2">border:</span><span class="s4"> </span><span class="s9">2px</span><span class="s4"> </span><span class="s1">solid</span><span class="s4"> </span><span class="s1">var(--bg-accent)</span><span class="s7">;</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">padding:</span><span class="s4"> </span><span class="s9">40px</span><span class="s7">;</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">border-radius:</span><span class="s4"> </span><span class="s9">8px</span><span class="s7">;</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">margin-top:</span><span class="s4"> </span><span class="s9">30px</span><span class="s7">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">  </span></span><span class="s7">}</span></p>
-<p class="p6"><span class="s8"></span><br></p>
-<p class="p1"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s1">.campaign-box</span><span class="s4"> </span><span class="s7">{</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s2">background:</span><span class="s1"> #FAF5F0</span><span class="s7">;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s2">border:</span><span class="s4"> </span><span class="s9">2px</span><span class="s4"> </span><span class="s1">solid</span><span class="s4"> </span><span class="s1">var(--btn-color)</span><span class="s7">;</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">padding:</span><span class="s4"> </span><span class="s9">40px</span><span class="s7">;</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">border-radius:</span><span class="s4"> </span><span class="s9">8px</span><span class="s7">;</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">margin-top:</span><span class="s4"> </span><span class="s9">30px</span><span class="s7">;</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">text-align:</span><span class="s4"> </span><span class="s5">center</span><span class="s7">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">  </span></span><span class="s7">}</span></p>
-<p class="p6"><span class="s8"></span><br></p>
-<p class="p1"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s1">.campaign-box</span><span class="s4"> </span><span class="s1">h3</span><span class="s4"> </span><span class="s7">{</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s2">color:</span><span class="s4"> </span><span class="s1">var(--btn-color)</span><span class="s7">;</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">margin-top:</span><span class="s4"> </span><span class="s9">0</span><span class="s7">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">  </span></span><span class="s7">}</span></p>
-<p class="p6"><span class="s8"></span><br></p>
-<p class="p5"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s1">/* FAQ */</span></p>
-<p class="p1"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s1">.faq-item</span><span class="s4"> </span><span class="s7">{</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">margin-bottom:</span><span class="s4"> </span><span class="s9">30px</span><span class="s7">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">  </span></span><span class="s7">}</span></p>
-<p class="p1"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s1">.faq-q</span><span class="s4"> </span><span class="s7">{</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">font-weight:</span><span class="s4"> </span><span class="s9">600</span><span class="s7">;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s2">color:</span><span class="s4"> </span><span class="s1">var(--text-accent)</span><span class="s7">;</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">margin-bottom:</span><span class="s4"> </span><span class="s9">5px</span><span class="s7">;</span></p>
-<p class="p7"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s2">font-family:</span><span class="s4"> </span><span class="s1">'Noto Serif JP'</span><span class="s7">,</span><span class="s4"> </span><span class="s5">serif</span><span class="s7">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">  </span></span><span class="s7">}</span></p>
-<p class="p1"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s1">.faq-a</span><span class="s4"> </span><span class="s7">{</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">padding-left:</span><span class="s4"> </span><span class="s9">1.5em</span><span class="s7">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">  </span></span><span class="s7">}</span></p>
-<p class="p6"><span class="s8"></span><br></p>
-<p class="p5"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s1">/* ロゴ */</span></p>
-<p class="p1"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s1">.logo-container</span><span class="s4"> </span><span class="s7">{</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">text-align:</span><span class="s4"> </span><span class="s5">center</span><span class="s7">;</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">margin-bottom:</span><span class="s4"> </span><span class="s9">20px</span><span class="s7">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">  </span></span><span class="s7">}</span></p>
-<p class="p1"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s1">.logo-img</span><span class="s4"> </span><span class="s7">{</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">max-width:</span><span class="s4"> </span><span class="s9">250px</span><span class="s7">;</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">height:</span><span class="s4"> </span><span class="s5">auto</span><span class="s7">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">  </span></span><span class="s7">}</span></p>
-<p class="p6"><span class="s8"></span><br></p>
-<p class="p5"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s1">/* ボタン */</span></p>
-<p class="p1"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s1">.cta-area</span><span class="s4"> </span><span class="s7">{</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">text-align:</span><span class="s4"> </span><span class="s5">center</span><span class="s7">;</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">margin-top:</span><span class="s4"> </span><span class="s9">60px</span><span class="s7">;</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">padding:</span><span class="s4"> </span><span class="s9">50px</span><span class="s4"> </span><span class="s9">20px</span><span class="s7">;</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">background-color:</span><span class="s4"> #fff</span><span class="s7">;</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">border-radius:</span><span class="s4"> </span><span class="s9">8px</span><span class="s7">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">  </span></span><span class="s7">}</span></p>
-<p class="p6"><span class="s8"></span><br></p>
-<p class="p1"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s1">.btn</span><span class="s4"> </span><span class="s7">{</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s2">display:</span><span class="s4"> </span><span class="s1">inline-block</span><span class="s7">;</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">background-color:</span><span class="s4"> </span><span class="s5">var(--btn-color)</span><span class="s7">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s2">color:</span><span class="s1"> #fff</span><span class="s7">;</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">text-decoration:</span><span class="s4"> </span><span class="s5">none</span><span class="s7">;</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">font-size:</span><span class="s4"> </span><span class="s9">1.2rem</span><span class="s7">;</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">font-weight:</span><span class="s4"> </span><span class="s9">500</span><span class="s7">;</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">padding:</span><span class="s4"> </span><span class="s9">20px</span><span class="s4"> </span><span class="s9">40px</span><span class="s7">;</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">border-radius:</span><span class="s4"> </span><span class="s9">50px</span><span class="s7">;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s2">transition:</span><span class="s4"> </span><span class="s1">background-color</span><span class="s4"> </span><span class="s9">0.3s</span><span class="s4"> </span><span class="s1">ease</span><span class="s7">;</span></p>
-<p class="p8"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s2">box-shadow:</span><span class="s4"> </span><span class="s1">0</span><span class="s4"> </span><span class="s1">4px</span><span class="s4"> </span><span class="s1">10px</span><span class="s4"> </span><span class="s5">rgba(</span><span class="s1">181</span><span class="s7">,</span><span class="s4"> </span><span class="s1">156</span><span class="s7">,</span><span class="s4"> </span><span class="s1">143</span><span class="s7">,</span><span class="s4"> </span><span class="s1">0.4</span><span class="s5">)</span><span class="s7">;</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">margin:</span><span class="s4"> </span><span class="s9">20px</span><span class="s4"> </span><span class="s9">0</span><span class="s7">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">  </span></span><span class="s7">}</span></p>
-<p class="p6"><span class="s8"></span><br></p>
-<p class="p1"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s1">.btn:hover</span><span class="s4"> </span><span class="s7">{</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">background-color:</span><span class="s4"> </span><span class="s5">var(--btn-hover)</span><span class="s7">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">  </span></span><span class="s7">}</span></p>
-<p class="p6"><span class="s8"></span><br></p>
-<p class="p5"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s1">/* 画像プレースホルダー用のスタイル */</span></p>
-<p class="p1"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s1">.image-placeholder</span><span class="s4"> </span><span class="s7">{</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">background-color:</span><span class="s4"> #e0e0e0</span><span class="s7">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s2">color:</span><span class="s1"> #666</span><span class="s7">;</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">display:</span><span class="s4"> </span><span class="s5">flex</span><span class="s7">;</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">align-items:</span><span class="s4"> </span><span class="s5">center</span><span class="s7">;</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">justify-content:</span><span class="s4"> </span><span class="s5">center</span><span class="s7">;</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">text-align:</span><span class="s4"> </span><span class="s5">center</span><span class="s7">;</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">border-radius:</span><span class="s4"> </span><span class="s9">8px</span><span class="s7">;</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">margin:</span><span class="s4"> </span><span class="s9">30px</span><span class="s4"> </span><span class="s9">0</span><span class="s7">;</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">padding:</span><span class="s4"> </span><span class="s9">20px</span><span class="s7">;</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s1">font-weight:</span><span class="s4"> </span><span class="s9">500</span><span class="s7">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s2">border:</span><span class="s1"> </span><span class="s9">2px</span><span class="s1"> </span><span class="s5">dashed</span><span class="s1"> #bbb</span><span class="s7">;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">  </span></span><span class="s7">}</span></p>
-<p class="p6"><span class="s8"></span><br></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s6">.img-hero</span><span class="s4"> </span><span class="s7">{</span><span class="s4"> </span><span class="s1">width:</span><span class="s4"> </span><span class="s9">100%</span><span class="s7">;</span><span class="s4"> </span><span class="s1">height:</span><span class="s4"> </span><span class="s5">auto</span><span class="s7">;</span><span class="s4"> </span><span class="s1">border-radius:</span><span class="s4"> </span><span class="s9">8px</span><span class="s7">;</span><span class="s4"> </span><span class="s1">margin-top:</span><span class="s4"> </span><span class="s9">20px</span><span class="s7">;</span><span class="s4"> </span><span class="s1">box-shadow:</span><span class="s4"> </span><span class="s9">0</span><span class="s4"> </span><span class="s9">4px</span><span class="s4"> </span><span class="s9">15px</span><span class="s4"> </span><span class="s5">rgba(</span><span class="s9">0</span><span class="s7">,</span><span class="s9">0</span><span class="s7">,</span><span class="s9">0</span><span class="s7">,</span><span class="s9">0.05</span><span class="s5">)</span><span class="s7">;</span><span class="s4"> </span><span class="s7">}</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s6">.img-profile</span><span class="s4"> </span><span class="s7">{</span><span class="s4"> </span><span class="s1">width:</span><span class="s4"> </span><span class="s9">250px</span><span class="s7">;</span><span class="s4"> </span><span class="s1">height:</span><span class="s4"> </span><span class="s9">250px</span><span class="s7">;</span><span class="s4"> </span><span class="s1">object-fit:</span><span class="s4"> </span><span class="s5">cover</span><span class="s7">;</span><span class="s4"> </span><span class="s1">margin:</span><span class="s4"> </span><span class="s9">0</span><span class="s4"> </span><span class="s5">auto</span><span class="s4"> </span><span class="s9">30px</span><span class="s7">;</span><span class="s4"> </span><span class="s1">border-radius:</span><span class="s4"> </span><span class="s9">50%</span><span class="s7">;</span><span class="s4"> </span><span class="s1">display:</span><span class="s4"> </span><span class="s5">block</span><span class="s7">;</span><span class="s4"> </span><span class="s1">box-shadow:</span><span class="s4"> </span><span class="s9">0</span><span class="s4"> </span><span class="s9">4px</span><span class="s4"> </span><span class="s9">15px</span><span class="s4"> </span><span class="s5">rgba(</span><span class="s9">0</span><span class="s7">,</span><span class="s9">0</span><span class="s7">,</span><span class="s9">0</span><span class="s7">,</span><span class="s9">0.05</span><span class="s5">)</span><span class="s7">;</span><span class="s4"> </span><span class="s7">}</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s6">.img-content</span><span class="s4"> </span><span class="s7">{</span><span class="s4"> </span><span class="s1">width:</span><span class="s4"> </span><span class="s9">100%</span><span class="s7">;</span><span class="s4"> </span><span class="s1">height:</span><span class="s4"> </span><span class="s5">auto</span><span class="s7">;</span><span class="s4"> </span><span class="s1">border-radius:</span><span class="s4"> </span><span class="s9">8px</span><span class="s7">;</span><span class="s4"> </span><span class="s1">margin:</span><span class="s4"> </span><span class="s9">30px</span><span class="s4"> </span><span class="s9">0</span><span class="s7">;</span><span class="s4"> </span><span class="s1">box-shadow:</span><span class="s4"> </span><span class="s9">0</span><span class="s4"> </span><span class="s9">4px</span><span class="s4"> </span><span class="s9">15px</span><span class="s4"> </span><span class="s5">rgba(</span><span class="s9">0</span><span class="s7">,</span><span class="s9">0</span><span class="s7">,</span><span class="s9">0</span><span class="s7">,</span><span class="s9">0.05</span><span class="s5">)</span><span class="s7">;</span><span class="s4"> </span><span class="s7">}</span></p>
-<p class="p1"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s1">.img-placeholder-5</span><span class="s4"> </span><span class="s7">{</span><span class="s4"> </span><span class="s2">height:</span><span class="s4"> </span><span class="s9">300px</span><span class="s7">;</span><span class="s4"> </span><span class="s7">}</span></p>
-<p class="p6"><span class="s8"></span><br></p>
-<p class="p5"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s1">/* スマホ対応 */</span></p>
-<p class="p1"><span class="s4"><span class="Apple-converted-space">  </span>@</span><span class="s1">media</span><span class="s4"> (</span><span class="s1">max-width:</span><span class="s4"> 600</span><span class="s1">px</span><span class="s4">) </span><span class="s7">{</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span>.hero h1 { </span><span class="s2">font-size:</span><span class="s1"> </span><span class="s9">1.4rem</span><span class="s7">;</span><span class="s1"> </span><span class="s7">}</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s6">h2</span><span class="s4"> </span><span class="s7">{</span><span class="s4"> </span><span class="s1">font-size:</span><span class="s4"> </span><span class="s9">1.3rem</span><span class="s7">;</span><span class="s4"> </span><span class="s7">}</span></p>
-<p class="p2"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s6">.btn</span><span class="s4"> </span><span class="s7">{</span><span class="s4"> </span><span class="s1">font-size:</span><span class="s4"> </span><span class="s9">1rem</span><span class="s7">;</span><span class="s4"> </span><span class="s1">padding:</span><span class="s4"> </span><span class="s9">15px</span><span class="s4"> </span><span class="s9">20px</span><span class="s7">;</span><span class="s4"> </span><span class="s7">}</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
-<p class="p1"><span class="s3">&lt;/</span><span class="s1">style</span><span class="s3">&gt;</span></p>
-<p class="p1"><span class="s3">&lt;/</span><span class="s1">head</span><span class="s3">&gt;</span></p>
-<p class="p1"><span class="s3">&lt;</span><span class="s1">body</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s8"></span><br></p>
-<p class="p3"><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"container"</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s8"></span><br></p>
-<p class="p5"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s1">&lt;!-- ロゴ --&gt;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"logo-container"</span><span class="s3">&gt;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">img</span><span class="s4"> </span><span class="s2">src</span><span class="s3">=</span><span class="s1">"https://groundedsoar.netlify.app/images/groundedsoar_logo.png"</span><span class="s4"> </span><span class="s2">alt</span><span class="s3">=</span><span class="s1">"Grounded Soar ロゴ"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"logo-img"</span><span class="s4"> </span><span class="s2">onerror</span><span class="s3">=</span><span class="s1">"this.outerHTML='&lt;div class=\'image-placeholder logo-img\'&gt;ロゴ画像&lt;br&gt;読み込みエラー&lt;/div&gt;'"</span><span class="s3">&gt;</span></p>
-<p class="p1"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s3">&lt;/</span><span class="s1">div</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s8"></span><br></p>
-<p class="p5"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s1">&lt;!-- ヒーローセクション --&gt;</span></p>
-<p class="p1"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s3">&lt;</span><span class="s1">header</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"hero"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">p</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"hero-catch"</span><span class="s3">&gt;</span><span class="s1">「お金を払って劣等感を感じに行くのは違う」と気づいた40代のあなたへ。</span><span class="s3">&lt;/</span><span class="s6">p</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">h1</span><span class="s3">&gt;</span><span class="s1">40歳からの、頑張らない</span><span class="s3">&lt;</span><span class="s6">br</span><span class="s3">&gt;</span><span class="s1">訪問型プライベート・ピラティス＆ヨガ</span><span class="s3">&lt;/</span><span class="s6">h1</span><span class="s3">&gt;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">p</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"hero-text"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">      </span>お化粧も着替えも不要。ジャージのまま自宅で待つだけで、</span><span class="s3">&lt;</span><span class="s6">br</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">      </span>「心と体のゆとり」が戻ってくる——</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;/</span><span class="s6">p</span><span class="s3">&gt;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">img</span><span class="s4"> </span><span class="s2">src</span><span class="s3">=</span><span class="s1">"https://groundedsoar.netlify.app/images/top-2.png"</span><span class="s4"> </span><span class="s2">alt</span><span class="s3">=</span><span class="s1">"40歳からの訪問型プライベート・ピラティス＆ヨガ"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"img-hero"</span><span class="s4"> </span><span class="s2">onerror</span><span class="s3">=</span><span class="s1">"this.outerHTML='&lt;div class=\'image-placeholder img-hero\'&gt;【画像1】&lt;br&gt;画像が読み込めませんでした。&lt;br&gt;URL（top-2.png）が正しいかご確認ください。&lt;/div&gt;'"</span><span class="s3">&gt;</span></p>
-<p class="p1"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s3">&lt;/</span><span class="s1">header</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s8"></span><br></p>
-<p class="p5"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s1">&lt;!-- P: 問題提起 --&gt;</span></p>
-<p class="p1"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s3">&lt;</span><span class="s1">section</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">h2</span><span class="s3">&gt;</span><span class="s1">運動しなきゃ…でも、こんな風に感じて立ち止まっていませんか？</span><span class="s3">&lt;/</span><span class="s6">h2</span><span class="s3">&gt;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">img</span><span class="s4"> </span><span class="s2">src</span><span class="s3">=</span><span class="s1">"https://groundedsoar.netlify.app/images/groundedsoar_nanairo.png"</span><span class="s4"> </span><span class="s2">alt</span><span class="s3">=</span><span class="s1">"Grounded Soar 主宰 Nanairo"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"img-profile"</span><span class="s4"> </span><span class="s2">onerror</span><span class="s3">=</span><span class="s1">"this.outerHTML='&lt;div class=\'image-placeholder img-profile\'&gt;【画像2】&lt;br&gt;画像が読み込めませんでした。&lt;br&gt;URL（groundedsoar_nanairo.png）が正しいかご確認ください。&lt;/div&gt;'"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">p</span><span class="s3">&gt;</span><span class="s1">こんにちは。訪問型プライベート・ピラティス＆ヨガ「Grounded Soar（グラウンデッド・ソア）」主宰の、Nanairoと申します。</span><span class="s3">&lt;/</span><span class="s6">p</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">p</span><span class="s3">&gt;</span><span class="s1">40代を迎え、体力の衰えや体型の変化を感じる日々。「健康のために運動を始めなきゃ」と頭ではわかっているのに、いざやろうとすると、どうしても足が重くなってしまうことはありませんか？</span><span class="s3">&lt;/</span><span class="s6">p</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">ul</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s3">&lt;</span><span class="s6">li</span><span class="s3">&gt;</span><span class="s1">複数人がいるスタジオで、自分だけがポーズをとれずに「劣等感」を感じたくない</span><span class="s3">&lt;/</span><span class="s6">li</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s3">&lt;</span><span class="s6">li</span><span class="s3">&gt;</span><span class="s1">わざわざお化粧をして、着替えて、キラキラした空間に通うのが面倒くさい</span><span class="s3">&lt;/</span><span class="s6">li</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s3">&lt;</span><span class="s6">li</span><span class="s3">&gt;</span><span class="s1">過去にからかわれたトラウマがあり、人前で運動するのが怖い</span><span class="s3">&lt;/</span><span class="s6">li</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s3">&lt;</span><span class="s6">li</span><span class="s3">&gt;</span><span class="s1">ハードな筋トレや、キツいだけの運動はどうせ続かないとわかっている</span><span class="s3">&lt;/</span><span class="s6">li</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;/</span><span class="s6">ul</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">p</span><span class="s3">&gt;</span><span class="s1">もし一つでも当てはまるなら、どうかご自身を責めないでください。それはあなたが運動へのモチベーションがないからではありません。「今のあなたに本当に合う環境」に出会えていないだけなのです。</span><span class="s3">&lt;/</span><span class="s6">p</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">p</span><span class="s3">&gt;</span><span class="s1">周りの目を気にして無理に背伸びをし、</span><span class="s3">&lt;</span><span class="s6">strong</span><span class="s3">&gt;</span><span class="s1">お金を払ってまで劣等感を感じに行くのは違う。</span><span class="s3">&lt;/</span><span class="s6">strong</span><span class="s3">&gt;</span><span class="s1">そう思いませんか？</span><span class="s3">&lt;/</span><span class="s6">p</span><span class="s3">&gt;</span></p>
-<p class="p1"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s3">&lt;/</span><span class="s1">section</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s8"></span><br></p>
-<p class="p5"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s1">&lt;!-- A: 問題の増幅 --&gt;</span></p>
-<p class="p1"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s3">&lt;</span><span class="s1">section</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">h2</span><span class="s3">&gt;</span><span class="s1">「いつかやろう」の先にある、見過ごせない現実</span><span class="s3">&lt;/</span><span class="s6">h2</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">p</span><span class="s3">&gt;</span><span class="s1">とはいえ、日々の忙しさに追われて「運動はまた今度でいいや」と後回しにし続けると、体は正直にサインを出してきます。</span><span class="s3">&lt;/</span><span class="s6">p</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">p</span><span class="s3">&gt;</span><span class="s1">ふと5年前の自分の写真を見て、その違いに愕然とした経験はありませんか？運動不足を放置することで、体は少しずつ硬くなり、無意識のうちに姿勢は崩れていきます。足がつりやすくなったり、慢性的な痛みが抜けなくなったり。</span><span class="s3">&lt;/</span><span class="s6">p</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">p</span><span class="s3">&gt;</span><span class="s1">体のこわばりは、やがて「心のこわばり」へと繋がります。自分の体型に自信が持てなくなり、「どうせ私なんて」という諦めが、日常からふとした心の余裕まで奪っていってしまうのです。</span><span class="s3">&lt;/</span><span class="s6">p</span><span class="s3">&gt;</span></p>
-<p class="p1"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s3">&lt;/</span><span class="s1">section</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s8"></span><br></p>
-<p class="p5"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s1">&lt;!-- S: ストーリーと解決策 --&gt;</span></p>
-<p class="p1"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s3">&lt;</span><span class="s1">section</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">h2</span><span class="s3">&gt;</span><span class="s1">グループレッスンで私が感じた「取り残される不安」</span><span class="s3">&lt;/</span><span class="s6">h2</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">p</span><span class="s3">&gt;</span><span class="s1">実は、私自身も過去に同じようなモヤモヤを抱えていた一人です。</span><span class="s3">&lt;/</span><span class="s6">p</span><span class="s3">&gt;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">img</span><span class="s4"> </span><span class="s2">src</span><span class="s3">=</span><span class="s1">"https://groundedsoar.netlify.app/images/class.png"</span><span class="s4"> </span><span class="s2">alt</span><span class="s3">=</span><span class="s1">"スタジオでのグループレッスンのイメージ"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"img-content"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">p</span><span class="s3">&gt;</span><span class="s1">以前、私は20人ほどが参加するグループレッスンに通っていました。先生の動きを見よう見まねでやってみるものの、「果たして自分のこのやり方で合っているのか？」が全くわかりませんでした。</span><span class="s3">&lt;/</span><span class="s6">p</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">p</span><span class="s3">&gt;</span><span class="s1">人数が多すぎて先生に質問するタイミングもなく、ただ周りのペースに合わせて時間をこなすだけ。「きっと、もっと私の体に合った効果的な方法があるはずなのに、それを知ることができない…」そんなもどかしさと、置いてけぼりにされているような孤独感を感じていました。</span><span class="s3">&lt;/</span><span class="s6">p</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">p</span><span class="s3">&gt;</span><span class="s1">その時の経験から、私は強く思うようになったのです。</span><span class="s3">&lt;</span><span class="s6">br</span><span class="s3">&gt;&lt;</span><span class="s6">strong</span><span class="s3">&gt;</span><span class="s1">「一人ひとりの体にしっかり向き合い、絶対に置いてけぼりにしない場所を作りたい」</span><span class="s3">&lt;/</span><span class="s6">strong</span><span class="s3">&gt;</span><span class="s1">と。</span><span class="s3">&lt;/</span><span class="s6">p</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">p</span><span class="s3">&gt;</span><span class="s1">さらに私は、認定カウンセラーとして40代以上の女性の様々なお悩みに寄り添ってきました。その経験を通して、体を整える前に、まずは「心を覆っている不安やトラウマ」を安心感で包み込むことが何より大切だと痛感しています。</span><span class="s3">&lt;/</span><span class="s6">p</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">p</span><span class="s3">&gt;</span><span class="s1">だからこそ、私は「ご自宅への訪問型」という形にたどり着きました。他人の目が一切ない、あなたが一番リラックスできる安全なテリトリーで、対話を通じて心身をほぐしていく。それが私の提供するレッスンの原点です。</span><span class="s3">&lt;/</span><span class="s6">p</span><span class="s3">&gt;</span></p>
-<p class="p1"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s3">&lt;/</span><span class="s1">section</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s8"></span><br></p>
-<p class="p5"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s1">&lt;!-- T: 実績と声 --&gt;</span></p>
-<p class="p1"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s3">&lt;</span><span class="s1">section</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">h2</span><span class="s3">&gt;</span><span class="s1">「無意識に脚を組まなくなったことに気づきました！」</span><span class="s3">&lt;/</span><span class="s6">h2</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">p</span><span class="s3">&gt;</span><span class="s1">私がお届けするのは、決まったマニュアルを押し付ける指導ではありません。事前の丁寧なヒアリングで、今の体の不調や、過去の運動に対する不安までしっかりお伺いします。その上で、その日のコンディションに合わせて「ピラティスの体幹アプローチ」と「ヨガのリラックス要素」を完全オーダーメイドでブレンドします。</span><span class="s3">&lt;/</span><span class="s6">p</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">img</span><span class="s4"> </span><span class="s2">src</span><span class="s3">=</span><span class="s1">"https://groundedsoar.netlify.app/images/lessonfuukei.png"</span><span class="s4"> </span><span class="s2">alt</span><span class="s3">=</span><span class="s1">"プライベートレッスンの風景"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"img-content"</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s8"></span><br></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">p</span><span class="s3">&gt;</span><span class="s1">実際に、この訪問レッスンを継続されているお客様からは、このような声をいただいています。</span><span class="s3">&lt;/</span><span class="s6">p</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
-<p class="p1"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s1">blockquote</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s3">&lt;</span><span class="s6">p</span><span class="s3">&gt;</span><span class="s1">「5年前の写真を見てハッとしました。ハードな筋トレは続かないと分かっていたので、ピラティスに出会えて本当によかったです」</span><span class="s3">&lt;/</span><span class="s6">p</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s3">&lt;</span><span class="s6">p</span><span class="s3">&gt;</span><span class="s1">「お金を払って劣等感を感じに行くのは違うと思っていました。ここはプライベートなので、からかわれたトラウマがあっても人目が気になりません」</span><span class="s3">&lt;/</span><span class="s6">p</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s3">&lt;</span><span class="s6">p</span><span class="s3">&gt;</span><span class="s1">「ポーズが合っていれば『いいね』と褒めてもらい、違っていても具体的な指示で直せるので安心できます。ごまかしのない的確なアドバイスが嬉しいです」</span><span class="s3">&lt;/</span><span class="s6">p</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s3">&lt;</span><span class="s6">p</span><span class="s3">&gt;</span><span class="s1">「職場の机に脚をぶつけなくなり、無意識に脚を組まなくなったことに気づきました！お風呂での簡単マッサージも習慣になり、足もつらなくなりました」</span><span class="s3">&lt;/</span><span class="s6">p</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s3">&lt;</span><span class="s6">p</span><span class="s3">&gt;</span><span class="s1">「レッスン中、ふと窓の外の空が目に入り、空の綺麗さに気がついて心に余裕ができました。運動が人生で初めて楽しいと感じています」</span><span class="s3">&lt;/</span><span class="s6">p</span><span class="s3">&gt;</span></p>
-<p class="p1"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;/</span><span class="s1">blockquote</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s8"></span><br></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">p</span><span class="s3">&gt;</span><span class="s1">できないことをダメ出しするのではなく、できたことを認め、正しい方向へ優しく導く。劇的な筋力アップを求めるのではなく、日常の中で「無意識に姿勢が整っている」という心地よい成功体験を積み重ねていく。これが、あなたが手にする「頑張らない健康習慣」です。</span><span class="s3">&lt;/</span><span class="s6">p</span><span class="s3">&gt;</span></p>
-<p class="p1"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s3">&lt;/</span><span class="s1">section</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s8"></span><br></p>
-<p class="p5"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s1">&lt;!-- O: オファーと料金 --&gt;</span></p>
-<p class="p1"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s3">&lt;</span><span class="s1">section</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">h2</span><span class="s3">&gt;</span><span class="s1">あなたの心と体に寄り添う、レッスンの詳細と料金</span><span class="s3">&lt;/</span><span class="s6">h2</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">p</span><span class="s3">&gt;</span><span class="s1">もう、「港区女子以外はお断り」のような見えないプレッシャーを感じる必要はありません。準備はお気に入りのジャージを着て、ご自宅でリラックスして待っていただくだけです。</span><span class="s3">&lt;/</span><span class="s6">p</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">p</span><span class="s3">&gt;</span><span class="s1">「長く、無理なく続けてほしい」という思いから、明確で通いやすい料金設定にいたしました。</span><span class="s3">&lt;/</span><span class="s6">p</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s8"></span><br></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"price-box"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s3">&lt;</span><span class="s6">h3</span><span class="s3">&gt;</span><span class="s1">💡 通常料金（A+B+C）</span><span class="s3">&lt;/</span><span class="s6">h3</span><span class="s3">&gt;</span></p>
-<p class="p1"><span class="s4"><span class="Apple-converted-space">      </span></span><span class="s3">&lt;</span><span class="s1">p</span><span class="s3">&gt;&lt;</span><span class="s1">strong</span><span class="s3">&gt;</span><span class="s4">A）レッスン料</span><span class="s3">&lt;/</span><span class="s1">strong</span><span class="s3">&gt;&lt;/</span><span class="s1">p</span><span class="s3">&gt;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">      </span></span><span class="s3">&lt;</span><span class="s6">ul</span><span class="s4"> </span><span class="s2">style</span><span class="s3">=</span><span class="s1">"box-shadow:none; padding-left:20px; background:transparent;"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s3">&lt;</span><span class="s6">li</span><span class="s3">&gt;</span><span class="s1">1回： 5,000円（税込）</span><span class="s3">&lt;/</span><span class="s6">li</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s3">&lt;</span><span class="s6">li</span><span class="s3">&gt;&lt;</span><span class="s6">strong</span><span class="s3">&gt;</span><span class="s1">お得な回数券（5回）： 24,000円（税込）</span><span class="s3">&lt;/</span><span class="s6">strong</span><span class="s3">&gt;</span><span class="s1"> ※1回あたり4,800円となりお得です！</span><span class="s3">&lt;/</span><span class="s6">li</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s3">&lt;/</span><span class="s6">ul</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s8"></span><br></p>
-<p class="p1"><span class="s4"><span class="Apple-converted-space">      </span></span><span class="s3">&lt;</span><span class="s1">p</span><span class="s3">&gt;&lt;</span><span class="s1">strong</span><span class="s3">&gt;</span><span class="s4">B）出張費</span><span class="s3">&lt;/</span><span class="s1">strong</span><span class="s3">&gt;&lt;/</span><span class="s1">p</span><span class="s3">&gt;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">      </span></span><span class="s3">&lt;</span><span class="s6">ul</span><span class="s4"> </span><span class="s2">style</span><span class="s3">=</span><span class="s1">"box-shadow:none; padding-left:20px; background:transparent;"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s3">&lt;</span><span class="s6">li</span><span class="s3">&gt;</span><span class="s1">片道30分未満： ＋2,000円</span><span class="s3">&lt;/</span><span class="s6">li</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s3">&lt;</span><span class="s6">li</span><span class="s3">&gt;</span><span class="s1">片道30分〜1時間未満： ＋4,000円</span><span class="s3">&lt;/</span><span class="s6">li</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s3">&lt;</span><span class="s6">li</span><span class="s3">&gt;</span><span class="s1">1時間以上の距離： 応相談</span><span class="s3">&lt;/</span><span class="s6">li</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s3">&lt;/</span><span class="s6">ul</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s8"></span><br></p>
-<p class="p1"><span class="s4"><span class="Apple-converted-space">      </span></span><span class="s3">&lt;</span><span class="s1">p</span><span class="s3">&gt;&lt;</span><span class="s1">strong</span><span class="s3">&gt;</span><span class="s4">C）駐車場代</span><span class="s3">&lt;/</span><span class="s1">strong</span><span class="s3">&gt;&lt;/</span><span class="s1">p</span><span class="s3">&gt;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">      </span></span><span class="s3">&lt;</span><span class="s6">ul</span><span class="s4"> </span><span class="s2">style</span><span class="s3">=</span><span class="s1">"box-shadow:none; padding-left:20px; background:transparent; margin-bottom:0;"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s3">&lt;</span><span class="s6">li</span><span class="s3">&gt;</span><span class="s1">お客様宅に駐車スペースがある場合： 0円</span><span class="s3">&lt;/</span><span class="s6">li</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s3">&lt;</span><span class="s6">li</span><span class="s3">&gt;</span><span class="s1">近隣コインパーキング利用の場合： 実費（事前にお調べしてお伝えします）</span><span class="s3">&lt;/</span><span class="s6">li</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s3">&lt;/</span><span class="s6">ul</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s8"></span><br></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"campaign-box"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s3">&lt;</span><span class="s6">h3</span><span class="s3">&gt;</span><span class="s1">🎁 【初回限定】安心の体験キャンペーン</span><span class="s3">&lt;/</span><span class="s6">h3</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s3">&lt;</span><span class="s6">p</span><span class="s3">&gt;</span><span class="s1">「本当に私にもできるかな？」「どんな先生が来るか少し不安」</span><span class="s3">&lt;</span><span class="s6">br</span><span class="s3">&gt;</span><span class="s1">そんな方のために、特別な初回オファーをご用意しました。</span><span class="s3">&lt;/</span><span class="s6">p</span><span class="s3">&gt;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">      </span></span><span class="s3">&lt;</span><span class="s6">p</span><span class="s4"> </span><span class="s2">style</span><span class="s3">=</span><span class="s1">"font-size:1.2rem; font-weight:600; margin: 20px 0;"</span><span class="s3">&gt;</span><span class="s4">料金： 5,000円（税込）</span><span class="s3">&lt;/</span><span class="s6">p</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s3">&lt;</span><span class="s6">p</span><span class="s3">&gt;&lt;</span><span class="s6">strong</span><span class="s3">&gt;</span><span class="s1">内容： 60分レッスン ＋ カウンセリング</span><span class="s3">&lt;/</span><span class="s6">strong</span><span class="s3">&gt;&lt;</span><span class="s6">br</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s3">&lt;</span><span class="s6">strong</span><span class="s3">&gt;</span><span class="s1">特典： 出張費・駐車場代すべて込み！</span><span class="s3">&lt;/</span><span class="s6">strong</span><span class="s3">&gt;&lt;/</span><span class="s6">p</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s3">&lt;</span><span class="s6">p</span><span class="s1"> </span><span class="s2">style</span><span class="s3">=</span><span class="s5">"font-size:0.85rem; color:#666;"</span><span class="s3">&gt;</span><span class="s1">※ご自宅まで片道30分を超える場合は、別途差額を頂戴いたします。</span><span class="s3">&lt;/</span><span class="s6">p</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s3">&lt;</span><span class="s6">p</span><span class="s3">&gt;</span><span class="s1">まずは一度、ご自宅でプロのカウンセリングによる「心のデトックス」と、無理のない運動による「体がほどける感覚」をご体験ください。もちろん、無理な継続の勧誘などは一切いたしません。</span><span class="s3">&lt;/</span><span class="s6">p</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p1"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s3">&lt;/</span><span class="s1">section</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s8"></span><br></p>
-<p class="p5"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s1">&lt;!-- FAQ --&gt;</span></p>
-<p class="p1"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s3">&lt;</span><span class="s1">section</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">h2</span><span class="s3">&gt;</span><span class="s1">よくある質問（FAQ）</span><span class="s3">&lt;/</span><span class="s6">h2</span><span class="s3">&gt;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"faq-item"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"faq-q"</span><span class="s3">&gt;</span><span class="s1">Q. 体が信じられないくらい硬くて、運動経験もほとんどありません。本当に大丈夫でしょうか？</span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"faq-a"</span><span class="s3">&gt;</span><span class="s1">A. はい、全く問題ありません。むしろ、そんな方にこそ受けていただきたいレッスンです。体が硬い方や運動経験がない方ほど、ご自身の体のちょっとした変化（肩が軽くなった、呼吸が深くなった等）に気づきやすく、効果を実感しやすいメリットがあります。周りの目を気にする必要のないマンツーマンですので、あなたのペースに合わせて一番安全で効果的な動きだけを厳選してお伝えします。</span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"faq-item"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"faq-q"</span><span class="s3">&gt;</span><span class="s1">Q. 自宅が散らかっていて、レッスンできるような広いスペースがあるか不安です…。</span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"faq-a"</span><span class="s3">&gt;</span><span class="s1">A. ヨガマット2枚分（約畳2帖分）のスペースがあれば、十分にレッスン可能です。「先生が来るから」と慌ててお部屋をピカピカに片付ける必要は全くありません。ありのままの日常空間へお邪魔させていただきますので、どうかお気兼ねなくお待ちください。</span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"faq-item"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"faq-q"</span><span class="s3">&gt;</span><span class="s1">Q. どのような服装で待っていればいいですか？メイクはした方がいいですか？</span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"faq-a"</span><span class="s3">&gt;</span><span class="s1">A. いつもご自宅でくつろいでいる「ジャージ」やスウェットなどで大丈夫です。体を締め付けない、動きやすい服装であれば何でも構いません。もちろんノーメイクでOKです。「誰かに見せるための準備」を一切省けるのが、ご自宅への訪問レッスンの最大のメリットです。</span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"faq-item"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"faq-q"</span><span class="s3">&gt;</span><span class="s1">Q. 当日、急に頭痛がしたり、腰が痛くなったりした場合はどうなりますか？</span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"faq-a"</span><span class="s3">&gt;</span><span class="s1">A. 決して無理に体を動かすことはしませんのでご安心ください。事前に組んでいたメニューがあっても、当日の体調が最優先です。その日のあなたの状態に100%寄り添って内容を柔軟に変更いたします。</span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"faq-item"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"faq-q"</span><span class="s3">&gt;</span><span class="s1">Q. 50代・60代でも受講できますか？</span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"faq-a"</span><span class="s3">&gt;</span><span class="s1">A. もちろんです。年齢の上限はありません。年齢を重ねるごとに変化する女性特有の心身のお悩みにも、認定カウンセラーとしての経験を活かし、丁寧に寄り添います。</span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;/</span><span class="s6">div</span><span class="s3">&gt;</span></p>
-<p class="p1"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s3">&lt;/</span><span class="s1">section</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s8"></span><br></p>
-<p class="p5"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s1">&lt;!-- CTA --&gt;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s3">&lt;</span><span class="s6">div</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"cta-area"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">h2</span><span class="s3">&gt;</span><span class="s1">さあ、心と体を解放する新しい習慣を始めませんか？</span><span class="s3">&lt;/</span><span class="s6">h2</span><span class="s3">&gt;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">img</span><span class="s4"> </span><span class="s2">src</span><span class="s3">=</span><span class="s1">"https://groundedsoar.netlify.app/images/relax.png"</span><span class="s4"> </span><span class="s2">alt</span><span class="s3">=</span><span class="s1">"リラックスした心豊かな時間のイメージ"</span><span class="s4"> </span><span class="s2">class</span><span class="s3">=</span><span class="s1">"img-content"</span><span class="s4"> </span><span class="s2">onerror</span><span class="s3">=</span><span class="s1">"this.outerHTML='&lt;div class=\'image-placeholder img-placeholder-5\' style=\'border:none; background:transparent;\'&gt;【画像5】&lt;br&gt;画像が読み込めませんでした。&lt;br&gt;URL（relax.png）が正しいかご確認ください。&lt;/div&gt;'"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">p</span><span class="s3">&gt;</span><span class="s1">「健康のために運動しなきゃ」という重いプレッシャーから、まずはご自身を解放してあげてください。誰かと比べて落ち込んだり、無理に頑張ったりする必要はもうどこにもありません。</span><span class="s3">&lt;/</span><span class="s6">p</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">p</span><span class="s3">&gt;</span><span class="s1">あなたの体にとって「一番心地よく、効果的なペース」で、日常の不調を手放していく。そして、ふと窓の外の空を見上げて、季節の移ろいを感じられるような「心のゆとり」を取り戻す。</span><span class="s3">&lt;</span><span class="s6">br</span><span class="s3">&gt;</span><span class="s1">その最初の一歩を、私が全力でサポートいたします。</span><span class="s3">&lt;/</span><span class="s6">p</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">p</span><span class="s3">&gt;</span><span class="s1">あなたにお会いし、心と体がふわりと軽くなる瞬間をご一緒できることを、心より楽しみにしています。まずは、下記のフォームから現在のお悩みや、ご希望の日時をお気軽にお聞かせください。</span><span class="s3">&lt;/</span><span class="s6">p</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">a</span><span class="s1"> </span><span class="s2">href</span><span class="s3">=</span><span class="s5">"#contact"</span><span class="s1"> </span><span class="s2">class</span><span class="s3">=</span><span class="s5">"btn"</span><span class="s3">&gt;</span><span class="s1">お問い合わせ・初回体験のお申し込みはこちら</span><span class="s3">&lt;/</span><span class="s6">a</span><span class="s3">&gt;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">    </span></span><span class="s3">&lt;</span><span class="s6">p</span><span class="s4"> </span><span class="s2">style</span><span class="s3">=</span><span class="s1">"font-size:0.9rem; color:#666; margin-top:10px;"</span><span class="s3">&gt;</span><span class="s4">※ご質問や、ちょっとしたご不安の相談だけでも大歓迎です</span><span class="s3">&lt;/</span><span class="s6">p</span><span class="s3">&gt;</span></p>
-<p class="p1"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s3">&lt;/</span><span class="s1">div</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s8"></span><br></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s3">&lt;</span><span class="s6">footer</span><span class="s4"> </span><span class="s2">style</span><span class="s3">=</span><span class="s1">"text-align:center; padding: 40px 0; color: #888; font-size: 0.9rem; border-top: 1px solid #EBEBEB; margin-top: 40px;"</span><span class="s3">&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space">    </span>&amp;copy; Grounded Soar. All rights reserved.</span></p>
-<p class="p1"><span class="s4"><span class="Apple-converted-space">  </span></span><span class="s3">&lt;/</span><span class="s1">footer</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s8"></span><br></p>
-<p class="p1"><span class="s3">&lt;/</span><span class="s1">div</span><span class="s3">&gt;</span></p>
-<p class="p6"><span class="s8"></span><br></p>
-<p class="p1"><span class="s3">&lt;/</span><span class="s1">body</span><span class="s3">&gt;</span></p>
-<p class="p1"><span class="s3">&lt;/</span><span class="s1">html</span><span class="s3">&gt;</span></p>
+
+<div class="container">
+
+  <!-- ロゴ -->
+  <div class="logo-container">
+    <img src="https://groundedsoar.netlify.app/images/groundedsoar_logo.png" alt="Grounded Soar ロゴ" class="logo-img" onerror="this.outerHTML='<div class=\'image-placeholder logo-img\'>ロゴ画像<br>読み込みエラー</div>'">
+  </div>
+
+  <!-- ヒーローセクション -->
+  <header class="hero">
+    <p class="hero-catch">「お金を払って劣等感を感じに行くのは違う」と気づいた40代のあなたへ。</p>
+    <h1>40歳からの、頑張らない<br>訪問型プライベート・ピラティス＆ヨガ</h1>
+    <p class="hero-text">
+      お化粧も着替えも不要。ジャージのまま自宅で待つだけで、<br>
+      「心と体のゆとり」が戻ってくる——
+    </p>
+    <img src="https://groundedsoar.netlify.app/images/top-2.png" alt="40歳からの訪問型プライベート・ピラティス＆ヨガ" class="img-hero" onerror="this.outerHTML='<div class=\'image-placeholder img-hero\'>【画像1】<br>画像が読み込めませんでした。<br>URL（top-2.png）が正しいかご確認ください。</div>'">
+  </header>
+
+  <!-- P: 問題提起 -->
+  <section>
+    <h2>運動しなきゃ…でも、こんな風に感じて立ち止まっていませんか？</h2>
+    <img src="https://groundedsoar.netlify.app/images/groundedsoar_nanairo.png" alt="Grounded Soar 主宰 Nanairo" class="img-profile" onerror="this.outerHTML='<div class=\'image-placeholder img-profile\'>【画像2】<br>画像が読み込めませんでした。<br>URL（groundedsoar_nanairo.png）が正しいかご確認ください。</div>'">
+    <p>こんにちは。訪問型プライベート・ピラティス＆ヨガ「Grounded Soar（グラウンデッド・ソア）」主宰の、Nanairoと申します。</p>
+    <p>40代を迎え、体力の衰えや体型の変化を感じる日々。「健康のために運動を始めなきゃ」と頭ではわかっているのに、いざやろうとすると、どうしても足が重くなってしまうことはありませんか？</p>
+    <ul>
+      <li>複数人がいるスタジオで、自分だけがポーズをとれずに「劣等感」を感じたくない</li>
+      <li>わざわざお化粧をして、着替えて、キラキラした空間に通うのが面倒くさい</li>
+      <li>過去にからかわれたトラウマがあり、人前で運動するのが怖い</li>
+      <li>ハードな筋トレや、キツいだけの運動はどうせ続かないとわかっている</li>
+    </ul>
+    <p>もし一つでも当てはまるなら、どうかご自身を責めないでください。それはあなたが運動へのモチベーションがないからではありません。「今のあなたに本当に合う環境」に出会えていないだけなのです。</p>
+    <p>周りの目を気にして無理に背伸びをし、<strong>お金を払ってまで劣等感を感じに行くのは違う。</strong>そう思いませんか？</p>
+  </section>
+
+  <!-- A: 問題の増幅 -->
+  <section>
+    <h2>「いつかやろう」の先にある、見過ごせない現実</h2>
+    <p>とはいえ、日々の忙しさに追われて「運動はまた今度でいいや」と後回しにし続けると、体は正直にサインを出してきます。</p>
+    <p>ふと5年前の自分の写真を見て、その違いに愕然とした経験はありませんか？運動不足を放置することで、体は少しずつ硬くなり、無意識のうちに姿勢は崩れていきます。足がつりやすくなったり、慢性的な痛みが抜けなくなったり。</p>
+    <p>体のこわばりは、やがて「心のこわばり」へと繋がります。自分の体型に自信が持てなくなり、「どうせ私なんて」という諦めが、日常からふとした心の余裕まで奪っていってしまうのです。</p>
+  </section>
+
+  <!-- S: ストーリーと解決策 -->
+  <section>
+    <h2>グループレッスンで私が感じた「取り残される不安」</h2>
+    <p>実は、私自身も過去に同じようなモヤモヤを抱えていた一人です。</p>
+    <img src="https://groundedsoar.netlify.app/images/class.png" alt="スタジオでのグループレッスンのイメージ" class="img-content">
+    <p>以前、私は20人ほどが参加するグループレッスンに通っていました。先生の動きを見よう見まねでやってみるものの、「果たして自分のこのやり方で合っているのか？」が全くわかりませんでした。</p>
+    <p>人数が多すぎて先生に質問するタイミングもなく、ただ周りのペースに合わせて時間をこなすだけ。「きっと、もっと私の体に合った効果的な方法があるはずなのに、それを知ることができない…」そんなもどかしさと、置いてけぼりにされているような孤独感を感じていました。</p>
+    <p>その時の経験から、私は強く思うようになったのです。<br><strong>「一人ひとりの体にしっかり向き合い、絶対に置いてけぼりにしない場所を作りたい」</strong>と。</p>
+    <p>さらに私は、認定カウンセラーとして40代以上の女性の様々なお悩みに寄り添ってきました。その経験を通して、体を整える前に、まずは「心を覆っている不安やトラウマ」を安心感で包み込むことが何より大切だと痛感しています。</p>
+    <p>だからこそ、私は「ご自宅への訪問型」という形にたどり着きました。他人の目が一切ない、あなたが一番リラックスできる安全なテリトリーで、対話を通じて心身をほぐしていく。それが私の提供するレッスンの原点です。</p>
+  </section>
+
+  <!-- T: 実績と声 -->
+  <section>
+    <h2>「無意識に脚を組まなくなったことに気づきました！」</h2>
+    <p>私がお届けするのは、決まったマニュアルを押し付ける指導ではありません。事前の丁寧なヒアリングで、今の体の不調や、過去の運動に対する不安までしっかりお伺いします。その上で、その日のコンディションに合わせて「ピラティスの体幹アプローチ」と「ヨガのリラックス要素」を完全オーダーメイドでブレンドします。</p>
+    
+    <img src="https://groundedsoar.netlify.app/images/lessonfuukei.png" alt="プライベートレッスンの風景" class="img-content">
+
+    <p>実際に、この訪問レッスンを継続されているお客様からは、このような声をいただいています。</p>
+    
+    <blockquote>
+      <p>「5年前の写真を見てハッとしました。ハードな筋トレは続かないと分かっていたので、ピラティスに出会えて本当によかったです」</p>
+      <p>「お金を払って劣等感を感じに行くのは違うと思っていました。ここはプライベートなので、からかわれたトラウマがあっても人目が気になりません」</p>
+      <p>「ポーズが合っていれば『いいね』と褒めてもらい、違っていても具体的な指示で直せるので安心できます。ごまかしのない的確なアドバイスが嬉しいです」</p>
+      <p>「職場の机に脚をぶつけなくなり、無意識に脚を組まなくなったことに気づきました！お風呂での簡単マッサージも習慣になり、足もつらなくなりました」</p>
+      <p>「レッスン中、ふと窓の外の空が目に入り、空の綺麗さに気がついて心に余裕ができました。運動が人生で初めて楽しいと感じています」</p>
+    </blockquote>
+
+    <p>できないことをダメ出しするのではなく、できたことを認め、正しい方向へ優しく導く。劇的な筋力アップを求めるのではなく、日常の中で「無意識に姿勢が整っている」という心地よい成功体験を積み重ねていく。これが、あなたが手にする「頑張らない健康習慣」です。</p>
+  </section>
+
+  <!-- O: オファーと料金 -->
+  <section>
+    <h2>あなたの心と体に寄り添う、レッスンの詳細と料金</h2>
+    <p>もう、「港区女子以外はお断り」のような見えないプレッシャーを感じる必要はありません。準備はお気に入りのジャージを着て、ご自宅でリラックスして待っていただくだけです。</p>
+    <p>「長く、無理なく続けてほしい」という思いから、明確で通いやすい料金設定にいたしました。</p>
+
+    <div class="price-box">
+      <h3>💡 通常料金（A+B+C）</h3>
+      <p><strong>A）レッスン料</strong></p>
+      <ul style="box-shadow:none; padding-left:20px; background:transparent;">
+        <li>1回： 5,000円（税込）</li>
+        <li><strong>お得な回数券（5回）： 24,000円（税込）</strong> ※1回あたり4,800円となりお得です！</li>
+      </ul>
+
+      <p><strong>B）出張費</strong></p>
+      <ul style="box-shadow:none; padding-left:20px; background:transparent;">
+        <li>片道30分未満： ＋2,000円</li>
+        <li>片道30分〜1時間未満： ＋4,000円</li>
+        <li>1時間以上の距離： 応相談</li>
+      </ul>
+
+      <p><strong>C）駐車場代</strong></p>
+      <ul style="box-shadow:none; padding-left:20px; background:transparent; margin-bottom:0;">
+        <li>お客様宅に駐車スペースがある場合： 0円</li>
+        <li>近隣コインパーキング利用の場合： 実費（事前にお調べしてお伝えします）</li>
+      </ul>
+    </div>
+
+    <div class="campaign-box">
+      <h3>🎁 【初回限定】安心の体験キャンペーン</h3>
+      <p>「本当に私にもできるかな？」「どんな先生が来るか少し不安」<br>そんな方のために、特別な初回オファーをご用意しました。</p>
+      <p style="font-size:1.2rem; font-weight:600; margin: 20px 0;">料金： 5,000円（税込）</p>
+      <p><strong>内容： 60分レッスン ＋ カウンセリング</strong><br>
+      <strong>特典： 出張費・駐車場代すべて込み！</strong></p>
+      <p style="font-size:0.85rem; color:#666;">※ご自宅まで片道30分を超える場合は、別途差額を頂戴いたします。</p>
+      <p>まずは一度、ご自宅でプロのカウンセリングによる「心のデトックス」と、無理のない運動による「体がほどける感覚」をご体験ください。もちろん、無理な継続の勧誘などは一切いたしません。</p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section>
+    <h2>よくある質問（FAQ）</h2>
+    <div class="faq-item">
+      <div class="faq-q">Q. 体が信じられないくらい硬くて、運動経験もほとんどありません。本当に大丈夫でしょうか？</div>
+      <div class="faq-a">A. はい、全く問題ありません。むしろ、そんな方にこそ受けていただきたいレッスンです。体が硬い方や運動経験がない方ほど、ご自身の体のちょっとした変化（肩が軽くなった、呼吸が深くなった等）に気づきやすく、効果を実感しやすいメリットがあります。周りの目を気にする必要のないマンツーマンですので、あなたのペースに合わせて一番安全で効果的な動きだけを厳選してお伝えします。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Q. 自宅が散らかっていて、レッスンできるような広いスペースがあるか不安です…。</div>
+      <div class="faq-a">A. ヨガマット2枚分（約畳2帖分）のスペースがあれば、十分にレッスン可能です。「先生が来るから」と慌ててお部屋をピカピカに片付ける必要は全くありません。ありのままの日常空間へお邪魔させていただきますので、どうかお気兼ねなくお待ちください。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Q. どのような服装で待っていればいいですか？メイクはした方がいいですか？</div>
+      <div class="faq-a">A. いつもご自宅でくつろいでいる「ジャージ」やスウェットなどで大丈夫です。体を締め付けない、動きやすい服装であれば何でも構いません。もちろんノーメイクでOKです。「誰かに見せるための準備」を一切省けるのが、ご自宅への訪問レッスンの最大のメリットです。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Q. 当日、急に頭痛がしたり、腰が痛くなったりした場合はどうなりますか？</div>
+      <div class="faq-a">A. 決して無理に体を動かすことはしませんのでご安心ください。事前に組んでいたメニューがあっても、当日の体調が最優先です。その日のあなたの状態に100%寄り添って内容を柔軟に変更いたします。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Q. 50代・60代でも受講できますか？</div>
+      <div class="faq-a">A. もちろんです。年齢の上限はありません。年齢を重ねるごとに変化する女性特有の心身のお悩みにも、認定カウンセラーとしての経験を活かし、丁寧に寄り添います。</div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="cta-area">
+    <h2>さあ、心と体を解放する新しい習慣を始めませんか？</h2>
+    <img src="https://groundedsoar.netlify.app/images/relax.png" alt="リラックスした心豊かな時間のイメージ" class="img-content" onerror="this.outerHTML='<div class=\'image-placeholder img-placeholder-5\' style=\'border:none; background:transparent;\'>【画像5】<br>画像が読み込めませんでした。<br>URL（relax.png）が正しいかご確認ください。</div>'">
+    <p>「健康のために運動しなきゃ」という重いプレッシャーから、まずはご自身を解放してあげてください。誰かと比べて落ち込んだり、無理に頑張ったりする必要はもうどこにもありません。</p>
+    <p>あなたの体にとって「一番心地よく、効果的なペース」で、日常の不調を手放していく。そして、ふと窓の外の空を見上げて、季節の移ろいを感じられるような「心のゆとり」を取り戻す。<br>その最初の一歩を、私が全力でサポートいたします。</p>
+    <p>あなたにお会いし、心と体がふわりと軽くなる瞬間をご一緒できることを、心より楽しみにしています。まずは、下記のフォームから現在のお悩みや、ご希望の日時をお気軽にお聞かせください。</p>
+    
+    <a href="#contact" class="btn">お問い合わせ・初回体験のお申し込みはこちら</a>
+    <p style="font-size:0.9rem; color:#666; margin-top:10px;">※ご質問や、ちょっとしたご不安の相談だけでも大歓迎です</p>
+  </div>
+
+  <footer style="text-align:center; padding: 40px 0; color: #888; font-size: 0.9rem; border-top: 1px solid #EBEBEB; margin-top: 40px;">
+    &copy; Grounded Soar. All rights reserved.
+  </footer>
+
+</div>
+
 </body>
 </html>
