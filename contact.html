@@ -17,7 +17,6 @@
     --btn-color: #B59C8F;
     --btn-hover: #A0887D;
   }
-
   body {
     font-family: 'Noto Sans JP', sans-serif;
     color: var(--text-main);
@@ -27,53 +26,40 @@
     padding: 0;
     letter-spacing: 0.05em;
   }
-
-  /* ロゴ・ヘッダー部分 */
   .header {
     text-align: center;
-    /* 上下のパディングを0に設定 */
     padding: 0;
     background-color: #fff;
-    /* 少し影をつけて、境界をはっきりさせる */
     box-shadow: 0 2px 5px rgba(0,0,0,0.02);
   }
-
   .logo-container {
     display: inline-block;
   }
-
   .logo-container a {
     text-decoration: none;
     display: block;
-    /* リンク全体にパディングを持たせる（クリックしやすくするため） */
-    padding: 20px 0; /* 上下の幅をロゴに合わせたい場合はここを調整 */
+    padding: 20px 0;
   }
-
   .logo-img {
-    max-width: 250px; /* ロゴの大きさに合わせて調整してください */
+    max-width: 250px;
     height: auto;
     display: block;
     margin: 0 auto;
-    /* 画像そのものの余白をなくす */
     padding: 0;
   }
-
   .container {
     max-width: 600px;
     margin: 0 auto;
     padding: 40px 20px 80px;
   }
-
   .intro-text {
     text-align: center;
     margin-bottom: 40px;
   }
-
   .intro-text p {
     font-size: 0.95rem;
     margin: 15px 0;
   }
-
   .brand-message {
     font-family: 'Noto Serif JP', serif;
     color: var(--text-accent);
@@ -82,10 +68,9 @@
     display: block;
     font-weight: 500;
   }
-
   .caution-text {
     font-size: 0.85rem;
-    color: #a58f86; /* 少し控えめな色味 */
+    color: #a58f86;
     background-color: var(--bg-accent);
     padding: 15px;
     border-radius: 4px;
@@ -93,8 +78,6 @@
     display: inline-block;
     text-align: left;
   }
-
-  /* フォームのデザイン */
   form {
     background: #fff;
     padding: 40px;
@@ -102,18 +85,15 @@
     border: 1px solid var(--bg-accent);
     box-shadow: 0 4px 15px rgba(0,0,0,0.02);
   }
-
   .form-group {
     margin-bottom: 25px;
   }
-
   label {
     display: block;
     font-weight: 500;
     margin-bottom: 8px;
     color: var(--text-accent);
   }
-
   input[type="text"],
   input[type="email"],
   textarea {
@@ -127,11 +107,9 @@
     font-size: 1rem;
     color: var(--text-main);
   }
-
   textarea {
     resize: vertical;
   }
-
   .submit-btn {
     display: block;
     width: 100%;
@@ -147,11 +125,9 @@
     margin-top: 20px;
     box-shadow: 0 4px 10px rgba(181, 156, 143, 0.4);
   }
-
   .submit-btn:hover {
     background-color: var(--btn-hover);
   }
-
   .back-home {
     display: block;
     text-align: center;
@@ -183,7 +159,13 @@
     </div>
   </div>
 
-  <form name="contact" method="POST" data-netlify="true" action="/success.html">
+  <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/success.html">
+    
+    <input type="hidden" name="form-name" value="contact" />
+    <div style="display:none;">
+      <label>Don’t fill this out: <input name="bot-field"></label>
+    </div>
+
     <div class="form-group">
       <label for="name">お名前</label>
       <input type="text" id="name" name="name" required placeholder="山田　花子">
@@ -201,7 +183,6 @@
 
     <button type="submit" class="submit-btn">この内容で送信する</button>
   </form>
-
   <a href="index.html" class="back-home">← トップページに戻る</a>
 </div>
 
