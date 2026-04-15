@@ -40,34 +40,65 @@
     padding: 40px 20px;
   }
 
-  /* ファーストビュー（ヒーローセクション） */
+  /* ヒーローセクション */
   .hero {
-    text-align: center;
-    padding: 60px 20px;
     background-color: #fff;
     border: 1px solid var(--bg-accent);
     border-radius: 8px;
+    padding: 40px;
     margin-bottom: 60px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.02);
   }
 
+  /* ロゴとタイトルの横並びコンテナ */
+  .hero-flex-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 30px;
+    text-align: left;
+  }
+
+  .hero-logo-wrapper {
+    flex-shrink: 0;
+  }
+
+  .hero-logo-img {
+    max-width: 180px; /* 横に並ぶ際のサイズ調整 */
+    height: auto;
+  }
+
+  .hero-text-content {
+    flex: 1;
+  }
+
   .hero-catch {
     color: var(--text-accent);
-    font-size: 1.1rem;
+    font-size: 0.95rem;
     font-weight: 500;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
+    line-height: 1.4;
   }
 
   .hero h1 {
-    font-size: 1.8rem;
-    line-height: 1.5;
-    margin-bottom: 30px;
+    font-size: 1.6rem;
+    line-height: 1.4;
+    margin: 0;
     color: var(--text-main);
+  }
+
+  .hero-intro {
+    text-align: center;
+    border-top: 1px solid var(--bg-accent);
+    padding-top: 30px;
+    margin-top: 20px;
   }
 
   .hero-text {
     font-size: 1rem;
     color: #666;
+    margin-bottom: 20px;
   }
 
   /* セクション共通 */
@@ -161,16 +192,6 @@
     padding-left: 1.5em;
   }
 
-  /* ロゴ */
-  .logo-container {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  .logo-img {
-    max-width: 250px;
-    height: auto;
-  }
-
   /* ボタン */
   .cta-area {
     text-align: center;
@@ -213,14 +234,21 @@
     border: 2px dashed #bbb;
   }
 
-  .img-hero { width: 100%; height: auto; border-radius: 8px; margin-top: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+  .img-hero { width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
   .img-profile { width: 250px; height: 250px; object-fit: cover; margin: 0 auto 30px; border-radius: 50%; display: block; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
   .img-content { width: 100%; height: auto; border-radius: 8px; margin: 30px 0; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
-  .img-placeholder-5 { height: 300px; }
 
   /* スマホ対応 */
   @media (max-width: 600px) {
+    .hero { padding: 30px 20px; }
+    .hero-flex-container {
+      flex-direction: column;
+      text-align: center;
+      gap: 20px;
+    }
+    .hero-logo-img { max-width: 140px; }
     .hero h1 { font-size: 1.4rem; }
+    .hero-catch { font-size: 0.9rem; }
     h2 { font-size: 1.3rem; }
     .btn { font-size: 1rem; padding: 15px 20px; }
   }
@@ -230,20 +258,27 @@
 
 <div class="container">
 
-  <!-- ロゴ -->
-  <div class="logo-container">
-    <img src="images/groundedsoar_logo.png" alt="Grounded Soar ロゴ" class="logo-img" onerror="this.outerHTML='<div class=\'image-placeholder logo-img\'>ロゴ画像<br>読み込みエラー</div>'">
-  </div>
-
   <!-- ヒーローセクション -->
   <header class="hero">
-    <p class="hero-catch">「お金を払って劣等感を感じに行くのは違う」と気づいた40代のあなたへ。</p>
-    <h1>40歳からの、心地よく整う<br>訪問型プライベート・ピラティス＆ヨガ</h1>
-    <p class="hero-text">
-      お化粧も着替えも不要。ジャージのまま自宅で待つだけで、<br>
-      「心と体のゆとり」が戻ってくる
-    </p>
-    <img src="images/top-2.png" alt="40歳からの訪問型プライベート・ピラティス＆ヨガ" class="img-hero" onerror="this.outerHTML='<div class=\'image-placeholder img-hero\'>【画像1】<br>画像が読み込めませんでした。<br>URL（top-2.png）が正しいかご確認ください。</div>'">
+    <div class="hero-flex-container">
+      <!-- ロゴをタイトルの左側（PC時）に配置 -->
+      <div class="hero-logo-wrapper">
+        <img src="images/groundedsoar_logo.png" alt="Grounded Soar ロゴ" class="hero-logo-img" onerror="this.outerHTML='<div class=\'image-placeholder hero-logo-img\'>ロゴ画像</div>'">
+      </div>
+      
+      <div class="hero-text-content">
+        <p class="hero-catch">「お金を払って劣等感を感じに行くのは違う」と気づいた40代のあなたへ。</p>
+        <h1>40歳からの、心地よく整う<br>訪問型プライベート・ピラティス＆ヨガ</h1>
+      </div>
+    </div>
+
+    <div class="hero-intro">
+      <p class="hero-text">
+        お化粧も着替えも不要。ジャージのまま自宅で待つだけで、<br>
+        「心と体のゆとり」が戻ってくる
+      </p>
+      <img src="images/top-2.png" alt="40歳からの訪問型プライベート・ピラティス＆ヨガ" class="img-hero" onerror="this.outerHTML='<div class=\'image-placeholder img-hero\'>【画像1】<br>画像が読み込めませんでした。<br>URL（top-2.png）が正しいかご確認ください。</div>'">
+    </div>
   </header>
 
   <!-- P: 問題提起 -->
