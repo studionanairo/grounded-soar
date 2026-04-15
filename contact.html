@@ -96,6 +96,7 @@
   }
   input[type="text"],
   input[type="email"],
+  input[type="tel"],
   textarea {
     width: 100%;
     padding: 12px;
@@ -110,6 +111,29 @@
   textarea {
     resize: vertical;
   }
+
+  /* ラジオボタン用のスタイル */
+  .radio-group {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .radio-option {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-weight: 400;
+    margin-bottom: 0;
+  }
+  .radio-option input[type="radio"] {
+    margin-right: 10px;
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    accent-color: var(--btn-color);
+  }
+
   .submit-btn {
     display: block;
     width: 100%;
@@ -177,7 +201,30 @@
     </div>
 
     <div class="form-group">
-      <label for="message">お問い合わせ内容</label>
+      <label for="tel">電話番号</label>
+      <input type="tel" id="tel" name="tel" placeholder="090-0000-0000">
+    </div>
+
+    <div class="form-group">
+      <label>お問い合わせ内容の項目</label>
+      <div class="radio-group">
+        <label class="radio-option">
+          <input type="radio" name="subject" value="レッスン希望" checked>
+          レッスンを受けてみたい
+        </label>
+        <label class="radio-option">
+          <input type="radio" name="subject" value="相談希望">
+          まずはお話を聞いてみたい
+        </label>
+        <label class="radio-option">
+          <input type="radio" name="subject" value="その他">
+          その他
+        </label>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="message">メッセージ詳細</label>
       <textarea id="message" name="message" rows="6" required placeholder="ご希望の日時や、現在のお悩みなどをご自由にご記入ください。"></textarea>
     </div>
 
