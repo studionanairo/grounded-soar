@@ -1,14 +1,209 @@
-<form name="contact" method="POST" data-netlify="true">
-  <p>
-    <label>お名前: <input type="text" name="name" /></label>
-  </p>
-  <p>
-    <label>メールアドレス: <input type="email" name="email" /></label>
-  </p>
-  <p>
-    <label>お問い合わせ内容: <textarea name="message"></textarea></label>
-  </p>
-  <p>
-    <button type="submit">送信する</button>
-  </p>
-</form>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact | Grounded Soar</title>
+<link rel="icon" href="images/groundedsoar_logofabicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500&family=Noto+Serif+JP:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg-color: #FAFAF7;
+    --text-main: #4A4643;
+    --text-accent: #8C7A6B;
+    --bg-accent: #F0EBE6;
+    --btn-color: #B59C8F;
+    --btn-hover: #A0887D;
+  }
+
+  body {
+    font-family: 'Noto Sans JP', sans-serif;
+    color: var(--text-main);
+    background-color: var(--bg-color);
+    line-height: 1.8;
+    margin: 0;
+    padding: 0;
+    letter-spacing: 0.05em;
+  }
+
+  /* ロゴ・ヘッダー部分 */
+  .header {
+    text-align: center;
+    /* 上下のパディングを0に設定 */
+    padding: 0;
+    background-color: #fff;
+    /* 少し影をつけて、境界をはっきりさせる */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+  }
+
+  .logo-container {
+    display: inline-block;
+  }
+
+  .logo-container a {
+    text-decoration: none;
+    display: block;
+    /* リンク全体にパディングを持たせる（クリックしやすくするため） */
+    padding: 20px 0; /* 上下の幅をロゴに合わせたい場合はここを調整 */
+  }
+
+  .logo-img {
+    max-width: 250px; /* ロゴの大きさに合わせて調整してください */
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    /* 画像そのものの余白をなくす */
+    padding: 0;
+  }
+
+  .container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 40px 20px 80px;
+  }
+
+  .intro-text {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .intro-text p {
+    font-size: 0.95rem;
+    margin: 15px 0;
+  }
+
+  .brand-message {
+    font-family: 'Noto Serif JP', serif;
+    color: var(--text-accent);
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    display: block;
+    font-weight: 500;
+  }
+
+  .caution-text {
+    font-size: 0.85rem;
+    color: #a58f86; /* 少し控えめな色味 */
+    background-color: var(--bg-accent);
+    padding: 15px;
+    border-radius: 4px;
+    margin-top: 20px;
+    display: inline-block;
+    text-align: left;
+  }
+
+  /* フォームのデザイン */
+  form {
+    background: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    border: 1px solid var(--bg-accent);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+  }
+
+  .form-group {
+    margin-bottom: 25px;
+  }
+
+  label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: var(--text-accent);
+  }
+
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--bg-accent);
+    border-radius: 4px;
+    background-color: var(--bg-color);
+    box-sizing: border-box;
+    font-family: inherit;
+    font-size: 1rem;
+    color: var(--text-main);
+  }
+
+  textarea {
+    resize: vertical;
+  }
+
+  .submit-btn {
+    display: block;
+    width: 100%;
+    background-color: var(--btn-color);
+    color: #fff;
+    border: none;
+    padding: 18px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+    box-shadow: 0 4px 10px rgba(181, 156, 143, 0.4);
+  }
+
+  .submit-btn:hover {
+    background-color: var(--btn-hover);
+  }
+
+  .back-home {
+    display: block;
+    text-align: center;
+    margin-top: 40px;
+    color: var(--text-accent);
+    text-decoration: none;
+    font-size: 0.9rem;
+  }
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="logo-container">
+    <a href="index.html">
+      <img src="images/groundedsoar_logo.png" alt="Grounded Soar Logo" class="logo-img">
+    </a>
+  </div>
+</header>
+
+<div class="container">
+  <div class="intro-text">
+    <span class="brand-message">お問い合わせ</span>
+    <p>セッションのご予約や、プランに関するご質問など、<br>どうぞお気軽にお聞かせください。</p>
+    <p>原則として48時間以内にお返事させていただきます。</p>
+    
+    <div class="caution-text">
+      万が一、返信がない場合は、ご入力いただいたメールアドレスが間違っている可能性がありますので、再度ご入力いただけますと幸いです。
+    </div>
+  </div>
+
+  <form name="contact" method="POST" data-netlify="true" action="/success.html">
+    <div class="form-group">
+      <label for="name">お名前</label>
+      <input type="text" id="name" name="name" required placeholder="山田　花子">
+    </div>
+
+    <div class="form-group">
+      <label for="email">メールアドレス</label>
+      <input type="email" id="email" name="email" required placeholder="example@gmail.com">
+    </div>
+
+    <div class="form-group">
+      <label for="message">お問い合わせ内容</label>
+      <textarea id="message" name="message" rows="6" required placeholder="ご希望の日時や、現在のお悩みなどをご自由にご記入ください。"></textarea>
+    </div>
+
+    <button type="submit" class="submit-btn">この内容で送信する</button>
+  </form>
+
+  <a href="index.html" class="back-home">← トップページに戻る</a>
+</div>
+
+</body>
+</html>
