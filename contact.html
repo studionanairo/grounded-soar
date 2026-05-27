@@ -110,6 +110,48 @@
   textarea {
     resize: vertical;
   }
+
+  /* プライバシーポリシーチェックボックス用のスタイル */
+  .privacy-group {
+    margin-top: 30px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  .privacy-label {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 0.9rem;
+    color: var(--text-main);
+    font-weight: 400;
+  }
+  .privacy-label input[type="checkbox"] {
+    margin-right: 8px;
+    width: 16px;
+    height: 16px;
+    accent-color: var(--btn-color);
+    cursor: pointer;
+  }
+  .privacy-link {
+    color: var(--text-accent);
+    text-decoration: none;
+    font-weight: 500;
+    border-bottom: 1px solid var(--text-accent);
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+  }
+  .privacy-link:hover {
+    color: var(--btn-color);
+    border-bottom-color: var(--btn-color);
+  }
+  .new-window-icon {
+    font-size: 0.85em;
+    font-weight: normal;
+    line-height: 1;
+  }
+
   .submit-btn {
     display: block;
     width: 100%;
@@ -135,6 +177,19 @@
     color: var(--text-accent);
     text-decoration: none;
     font-size: 0.9rem;
+  }
+
+  @media (max-width: 480px) {
+    form {
+      padding: 25px 20px;
+    }
+    .privacy-label {
+      align-items: flex-start;
+      text-align: left;
+    }
+    .privacy-label input[type="checkbox"] {
+      margin-top: 4px;
+    }
   }
 </style>
 </head>
@@ -180,6 +235,18 @@
       <textarea id="message" name="message" rows="6" required placeholder="ご希望の日時や、現在のお悩みなどをご自由にご記入ください。"></textarea>
     </div>
 
+    <!-- プライバシーポリシー同意チェックボックス（新規ウィンドウアイコン付き） -->
+    <div class="privacy-group">
+      <label class="privacy-label" for="privacy_agree">
+        <input type="checkbox" id="privacy_agree" name="privacy_agree" required>
+        <span>
+          <a href="privacy.html" target="_blank" class="privacy-link">
+            プライバシーポリシー<span class="new-window-icon">⧉</span>
+          </a>に同意する
+        </span>
+      </label>
+    </div>
+
     <button type="submit" class="submit-btn" id="submit-button">この内容で送信する</button>
   </form>
 
@@ -205,7 +272,6 @@
       }
     }).then(response => {
       if (response.ok) {
-        // 送信が成功したら自作の success.html に移動する
         window.location.href = "success.html";
       } else {
         response.json().then(data => {

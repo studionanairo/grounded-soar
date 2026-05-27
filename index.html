@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Grounded Soar | 訪問型プライベート・ピラティス＆ヨガ</title>
+<title>Grounded Soar | 宮城県仙台市の訪問型プライベート・ピラティス＆ヨガ</title>
 <link rel="icon" href="images/groundedsoar_logofabicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -238,6 +238,29 @@
   .img-profile { width: 250px; height: 250px; object-fit: cover; margin: 0 auto 30px; border-radius: 50%; display: block; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
   .img-content { width: 100%; height: auto; border-radius: 8px; margin: 30px 0; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
 
+  /* フッターのスタイル設定 */
+  .footer-area {
+    text-align: center;
+    padding: 40px 0;
+    color: #888;
+    font-size: 0.9rem;
+    border-top: 1px solid #EBEBEB;
+    margin-top: 40px;
+  }
+  .footer-links {
+    margin-bottom: 15px;
+  }
+  .footer-links a {
+    color: var(--text-accent);
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: color 0.3s ease;
+  }
+  .footer-links a:hover {
+    color: var(--btn-color);
+    text-decoration: underline;
+  }
+
   /* スマホ対応 */
   @media (max-width: 600px) {
     .hero { padding: 30px 20px; }
@@ -285,7 +308,7 @@
   <section>
     <h2>運動しなきゃ…でも、こんな風に感じて立ち止まっていませんか？</h2>
     <img src="images/groundedsoar_nanairo.png" alt="Grounded Soar 主宰 Nanairo" class="img-profile" onerror="this.outerHTML='<div class=\'image-placeholder img-profile\'>【画像2】<br>画像が読み込めませんでした。<br>URL（groundedsoar_nanairo.png）が正しいかご確認ください。</div>'">
-    <p>こんにちは。訪問型プライベート・ピラティス＆ヨガ「Grounded Soar（グラウンデッド・ソア）」主宰の、Nanairoと申します。</p>
+    <p>こんにちは。**宮城県仙台市を中心に活動する、**訪問型プライベート・ピラティス＆ヨガ「Grounded Soar（グラウンデッド・ソア）」主宰の、Nanairoと申します。</p>
     <p>40代を迎え、体力の衰えや体型の変化を感じる日々。「健康のために運動を始めなきゃ」と頭ではわかっているのに、いざやろうとすると、どうしても足が重くなってしまうことはありませんか？</p>
     <ul>
       <li>複数人がいるスタジオで、自分だけがポーズをとれずに「劣等感」を感じたくない</li>
@@ -351,9 +374,10 @@
       </ul>
 
       <p><strong>B）出張費</strong></p>
+      <p style="font-size: 0.9rem; margin-left: 10px; margin-bottom: 5px;">※仙台市内の拠点をベースに算出いたします。詳細な金額はお問い合わせ時に確定いたします。</p>
       <ul style="box-shadow:none; padding-left:20px; background:transparent;">
-        <li>片道30分未満： ＋2,000円</li>
-        <li>片道30分〜1時間未満： ＋4,000円</li>
+        <li>移動時間 30分未満： ＋2,000円</li>
+        <li>移動時間 30分〜1時間未満： ＋4,000円</li>
         <li>1時間以上の距離： 応相談</li>
       </ul>
 
@@ -370,7 +394,7 @@
       <p style="font-size:1.2rem; font-weight:600; margin: 20px 0;">料金： 5,000円（税込）</p>
       <p><strong>内容： 60分レッスン ＋ カウンセリング</strong><br>
       <strong>特典： 出張費・駐車場代すべて込み！</strong></p>
-      <p style="font-size:0.85rem; color:#666;">※ご自宅まで片道30分を超える場合は、別途差額を頂戴いたします。</p>
+      <p style="font-size:0.85rem; color:#666;">※仙台市内の拠点からご自宅までの移動時間が30分を超える場合は、別途差額を頂戴いたします。</p>
       <p>まずは一度、ご自宅で無理のない運動による「体がスッキリする感覚」をご体験ください。もちろん、無理な継続の勧誘などは一切いたしません。</p>
     </div>
   </section>
@@ -412,7 +436,10 @@
     <p style="font-size:0.9rem; color:#666; margin-top:10px;">※ご質問や、ちょっとしたご不安の相談だけでも大歓迎です</p>
   </div>
 
-  <footer style="text-align:center; padding: 40px 0; color: #888; font-size: 0.9rem; border-top: 1px solid #EBEBEB; margin-top: 40px;">
+  <footer class="footer-area">
+    <div class="footer-links">
+      <a href="privacy.html">プライバシーポリシー</a>
+    </div>
     &copy; Grounded Soar. All rights reserved.
   </footer>
 
